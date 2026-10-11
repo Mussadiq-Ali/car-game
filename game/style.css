@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.header-section h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.header-section p {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    width: 320px;
+    background-color: #222;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.score-item {
+    text-align: center;
+}
+
+.score-item .label {
+    display: block;
+    font-size: 10px;
+    color: #aaa;
+}
+
+.score-item .value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.road {
+    position: relative;
+    width: 320px;
+    height: 500px;
+    background-color: #333;
+    border-left: 6px solid #fff;
+    border-right: 6px solid #fff;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.road-line {
+    position: absolute;
+    width: 6px;
+    height: 80px;
+    background-color: #fff;
+    left: 48%;
+    animation: roadMove 1s linear infinite;
+}
+
+.line1 {
+    top: -100px;
+}
+
+.line2 {
+    top: 250px;
+}
+
+@keyframes roadMove {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 550px;
+    }
+}
+
+.player {
+    position: absolute;
+    bottom: 25px;
+    left: 42%;
+    font-size: 30px;
+}
+
+.enemy {
+    position: absolute;
+    font-size: 30px;
+}
+
+.enemy1 {
+    top: -100px;
+    left: 20%;
+    animation: enemyMove 3s linear infinite;
+}
+
+.enemy2 {
+    top: -150px;
+    left: 70%;
+    animation: enemyMove 2.5s linear infinite;
+}
+
+@keyframes enemyMove {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 650px;
+    }
+}
+
+.instructions {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.instructions p {
+    margin: 3px 0;
+}
+
+.start-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 480px) {
+    .road {
+        width: 280px;
+        height: 450px;
+    }
+    
+    .scoreboard {
+        width: 280px;
+    }
+}
